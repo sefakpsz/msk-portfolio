@@ -1,4 +1,6 @@
 import { twMerge } from 'tailwind-merge'
+import AsideInfo from './AsideInfo'
+import BgColor from './BgColor'
 
 interface AsideProps {
     className?: string
@@ -6,10 +8,9 @@ interface AsideProps {
 
 const Aside: React.FC<AsideProps> = ({ className }) => {
     return (
-        <div className={twMerge('bg-yellow-500 rounded-md h-full', className)}>
-            <p className='p-2 flex justify-center font-semibold text-black'>
-                Aside
-            </p>
+        <div className={twMerge('bg-[#232339] h-full relative overflow-hidden', className)}>
+            <AsideInfo className='absolute' />
+            <BgColor />
         </div>
     )
 }
