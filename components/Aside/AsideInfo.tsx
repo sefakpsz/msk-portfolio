@@ -7,18 +7,15 @@ interface AsideInfoProps {
 
 const AsideInfo: React.FC<AsideInfoProps> = ({ className }) => {
     return (
-        <div className={twMerge('relative flex flex-col justify-center items-center h-[400px] pr-8 pl-8', className)}>
-            <div className='mb-4'>
-                <Image src='/../public/msk.jpeg' width={200} height={200} alt="Logo" />
+        <div className={twMerge('relative flex flex-col justify-center items-center h-[300px] pr-8 pl-8', className)}>
+            <div className='mb-3'>
+                <Image src='/../public/msk.jpeg' className='rounded-md' width={150} height={80} alt="Logo" />
             </div>
 
-            <div className='flex text-start flex-col gap-1 mb-12'>
-                <p className='text-blue-900 text-opacity-80 text-3xl font-mono font-extrabold'>MSK</p>
-                <p className='text-lg font-bold font-sans '>Fullstack Software Developer</p>
+            <div className='flex text-start flex-col gap-2'>
+                <p className='text-opacity-40 text-xl font-semibold'>Mr. Doorless</p>
+                <p className='bg-gradient-to-r from-purple-500 via-purple-300 to-purple-200 text-transparent bg-clip-text text-lg opacity-60 font-bold font-sans'>Software Developer</p>
             </div>
-
-            <span className='bg-gradient-to-r from-blue-900 via-blue-800 to-blue-600 w-[80%] h-[1px]'></span>
-
         </div>
     )
 }

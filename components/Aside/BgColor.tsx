@@ -1,8 +1,12 @@
-import React from 'react'
+import { twMerge } from "tailwind-merge"
 
-const BgColor = () => {
+interface BgColorProps {
+    className?: string
+}
+
+const BgColor: React.FC<BgColorProps> = ({ className }) => {
     return (
-        <div className='relative h-full w-full blur-md'>
+        <div className={twMerge('relative h-full w-full blur-md', className)} >
             <div className='bg-[#516CF7] blur-[32px] w-[66px] h-[106px] rounded-[100px] opacity-[0.15] absolute -top-5'></div>
             <div className='bg-[#22C3F1] blur-[32px] w-[104px] h-[106px] rounded-[100px] opacity-[0.15] absolute -right-10 top-5'></div>
             <div className='bg-[#4AC06F] blur-[32px] w-[78px] h-[87px] rounded-[100px] opacity-[0.15] absolute top-[140px] right-5'></div>
