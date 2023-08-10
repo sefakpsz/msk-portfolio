@@ -11,7 +11,7 @@ const Aside: React.FC<AsideProps> = ({ className }) => {
     return (
         <div className={twMerge('bg-[#232339] h-full relative overflow-hidden', className)}>
             <AsideInfo className='' />
-            <AsideItem className='' />
+            {/* <AsideItem className='' contents={[{ title: '', description: '', imageSource: '/../app/favicon.ico' }]} /> */}
             <BgColor className='' />
         </div>
     )
