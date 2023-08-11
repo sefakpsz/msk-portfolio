@@ -1,32 +1,32 @@
-import Image from 'next/image'
+import { AsideItem } from './Aside.constants'
+
 import { twMerge } from "tailwind-merge"
 
-interface AsideItemProps {
-    className?: string,
-    contents: [{
-        imageSource: string,
-        title: string,
-        description: string
-    }]
+export interface AsideItemProps {
+    className?: string
+    contents: AsideItem[]
+    title: string
 }
 
-const AsideItem: React.FC<AsideItemProps> = ({ className, contents }) => {
+const AsideItem: React.FC<AsideItemProps> = ({ className, contents, title }) => {
     return (
         <div>
-            {contents.map(content => (
-                (
-                    <div key={content.title} className={twMerge('flex justify-center my-1', className)}>
-                        <hr className='bg-white opacity-20 w-[200px] h-[1px]'></hr>
+            <hr className='bg-white opacity-20 w-[180px] h-[1px] mb-4 ml-14'></hr>
+            <div className='flex flex-col items-start mb-8 mx-8'>
+                <p className='opacity-50'>{title[0].toUpperCase() + title.slice(1)}</p>
+                {contents.map(content => (
+                    (
+                        <div key={content.title} className={twMerge('flex flex-row justify-center items-center gap-2 mt-4', className)}>
+                            <p>icon</p>
 
-                        <Image src={content.imageSource} fill={true} alt='logo' />
-
-                        <div className='flex items-start'>
-                            <p className='text-xs'>{content.title}</p>
-                            <p className='font-semibold'>{content.description}</p>
+                            <div className='flex items-start flex-col -mt-2'>
+                                <p className='flex'>{content.title}</p>
+                                <p className='font-light'>{content.description}</p>
+                            </div>
                         </div>
-                    </div>
-                )
-            ))}
+                    )
+                ))}
+            </div>
         </div>
     )
 }
