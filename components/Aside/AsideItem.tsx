@@ -1,5 +1,5 @@
 import { AsideItem } from './Aside.constants'
-
+import { Icon } from '@iconify/react'
 import { twMerge } from "tailwind-merge"
 
 export interface AsideItemProps {
@@ -17,7 +17,7 @@ const AsideItem: React.FC<AsideItemProps> = ({ className, contents, title }) => 
                 {contents.map(content => (
                     (
                         <div key={content.title} className={twMerge('flex flex-row justify-center items-center gap-2 mt-4', className)}>
-                            <p>icon</p>
+                            {/* <Icon icon="tabler:building-estate" /> */}iconify
 
                             <div className='flex items-start flex-col -mt-2'>
                                 <p className='flex'>{content.title}</p>

@@ -1,7 +1,7 @@
 export interface AsideItem {
-  imageSource: string
   title: string
   description: string
+  imageSource: string
 }
 
 export interface AsideConstants {
